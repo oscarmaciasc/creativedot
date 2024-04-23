@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registro.css">
+    <link rel="stylesheet" href="normalize.css">
+    <title>Registro</title>
+</head>
+
+<body>
+    <div class="FormContainer">
+        <h1 class="centerTitle">Registro</h1>
+        <form method="post" action="Server/process-admin.php">
+            <div class="form-flex">
+                <label for="new_username">Nombre de Usuario</label>
+                <input type="text" id="new_username" name="new_username">
+                <label for="new_password">Contraseña</label>
+                <input type="password" id="new_password" name="new_password">
+                <label for="email">Correo Electronico</label>
+                <input type="text" id="email" name="email">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre">
+                <label for="paterno">Apellido Paterno</label>
+                <input type="text" id="paterno" name="paterno">
+                <label for="materno">Apellido Materno</label>
+                <input type="text" id="materno" name="materno">
+                <label for="cellphone">Numero de telefono</label>
+                <input type="number" id="cellphone" name="cellphone">
+                <label for="cp">Codigo Postal</label>
+                <input type="number" id="cp" name="cp">
+            </div>
+            <div>
+                <button type="submit">Registrar</button>
+            </div>
+        </form>
+    </div>
+</body>
+<footer class="foot">
+    <h1>Oscar Alejandro Macias Castillo</h1>
+    <h1>4P</h1>
+    <h1>Desarrollo Web y Bases de Datos I</h1>
+</footer>
+
+</html>

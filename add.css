@@ -1,0 +1,322 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    height: 100%;
+}
+
+header {
+    width: 100%;
+    height: 5em;
+    z-index: 2;
+    position: relative;
+}
+
+.HeadFlex {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    color: white;
+    background-color: #131b29;
+    position: relative;
+}
+
+
+.HeadLogo {
+    width: 20%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.HeadLogo h1 {
+    margin: 0;
+    font-size: 1.6em;
+}
+
+.HeadNav ul {
+    all: unset;
+}
+
+.HeadNav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+
+    display: inline-block;
+    padding-bottom:2px;
+    background-image: linear-gradient(#ffffff 0 0);
+    background-position: 0 100%; /*OR bottom left*/
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    transition:
+      background-size 0.3s,
+      background-position 0.2s 0.3s; /*change after the size immediately*/
+}
+
+.HeadNav a:hover {
+    background-position: 100% 100%; /*OR bottom right*/
+  background-size: 100% 2px;
+}
+
+.HeadNav {
+    width: 75%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+}
+
+.HeadNav a {
+    margin: 1em;
+}
+
+.Container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.AddContainer {
+    width: 36%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at bottom left, #fbdb2d 35%, transparent 36%), radial-gradient(circle at top right, #fbdb2d 35%, transparent 36%);
+    background-size: 6em 6em;
+    background-color: #ffffff;
+    opacity: 1;
+    flex-direction: column;
+    border-radius: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+.FormContainer {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 60%;
+    margin: 4em auto;
+    margin-top: 0;
+}
+
+.centerTitle {
+    justify-content: center;
+    display: flex;
+}
+
+.form-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-flex input, .form-flex select {
+    border: solid 1px;
+    padding: 0.8em;
+    background-color: white;
+    margin-top: 0.3em;
+    margin-bottom: 1em;
+    border-radius: 0.4em;
+}
+
+form button {
+    color: white;
+    background-color: #183D3D;
+    width: 100%;
+    border-radius: 0.4em;
+    border: none;
+    padding: 0.8rem;
+    transition: background-color 0.5s ease-in-out;
+}
+
+form label {
+    /* font-weight: bold; */
+}
+
+.foot {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    gap: 3em;
+    width: 100%;
+}
+
+footer {
+    color: white;
+    padding: 2%;
+    background-color: #212529;
+    width: 96%;
+}
+
+footer h1 {
+    font-size: 1rem;
+}
+
+
+/* ----------------HAMBURGUER MENU MOBILE----------------- */
+
+.HeadHamburguer {
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.hamburguer {
+    position: relative;
+    display: block;
+    width: 35px;
+    cursor: pointer;
+    
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+
+    transition: all 0.1s ease-in-out;
+    z-index: 1;
+}
+
+.hamburguer:hover {
+    transform: scale(1.1);
+}
+
+.hamburguer .bar,
+.hamburguer:after,
+.hamburguer:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0px;
+    transition: 0.4s;
+}
+
+.hamburguer.is-active:before {
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.hamburguer.is-active:after {
+    transform: rotate(45deg) translate(-9px, -8px);
+}
+
+.hamburguer.is-active .bar {
+    opacity: 0;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    min-height: 100vh;
+    display: block;
+    z-index: 1;
+    background-color: #131b29;
+    padding-top: 120px;
+    transition: 0.5s;
+}
+
+.mobile-nav a {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 16px;
+    text-align: center;
+    padding: 12px 16px;
+    background-color: #1a2d4e;
+
+    color: white;
+    text-decoration: none;
+}
+
+.mobile-nav.is-active {
+    left: 0;
+}
+
+.mobile-nav a:hover {
+    background-color: #204078;
+}
+
+@media (min-width: 768px) {
+    
+    .mobile-nav {
+        display: none;
+    }
+
+    .hamburguer {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .HeadNav a {
+        display: none;
+    }
+}
+
+/* --------------------------------------------- */
+
+
+@media (max-width: 768px) {
+    .HeadLogo {
+        width: 70%;
+    }
+
+    .HeadHamburguer {
+        width: 30%;
+    }
+
+    .Container {
+        padding: 4rem;
+    }
+
+    .AddContainer {
+        width: 100%;
+    }
+
+    .FormContainer {
+        margin: 2rem;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .foot {
+        height: 12em !important;
+        padding: 3em !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .foot h2 {
+        font-size: 1.2rem !important;
+        word-spacing: 0.5rem !important;
+    }
+
+}

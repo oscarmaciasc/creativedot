@@ -1,0 +1,503 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    height: 100%;
+}
+
+header {
+    width: 100%;
+    height: 5em;
+    z-index: 2;
+    position: relative;
+}
+
+.HeadFlex {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    color: white;
+    background-color: #131b29;
+    position: relative;
+    height: 6em;
+}
+
+
+.HeadLogo {
+    width: 20%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.HeadLogo h1 {
+    margin: 0;
+    font-size: 1.6em;
+}
+
+.HeadNav ul {
+    all: unset;
+}
+
+.HeadNav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+
+    display: inline-block;
+    padding-bottom: 2px;
+    background-image: linear-gradient(#ffffff 0 0);
+    background-position: 0 100%;
+    /*OR bottom left*/
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    transition:
+        background-size 0.3s,
+        background-position 0.2s 0.3s;
+    /*change after the size immediately*/
+}
+
+.HeadNav a:hover {
+    background-position: 100% 100%;
+    /*OR bottom right*/
+    background-size: 100% 2px;
+}
+
+.HeadNav {
+    width: 75%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.HeadNav a {
+    margin: 1em;
+}
+
+/* ----------------HAMBURGUER MENU MOBILE----------------- */
+
+.HeadHamburguer {
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.hamburguer {
+    position: relative;
+    display: block;
+    width: 35px;
+    cursor: pointer;
+    
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+
+    transition: all 0.1s ease-in-out;
+    z-index: 1;
+}
+
+.hamburguer:hover {
+    transform: scale(1.1);
+}
+
+.hamburguer .bar,
+.hamburguer:after,
+.hamburguer:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0px;
+    transition: 0.4s;
+}
+
+.hamburguer.is-active:before {
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.hamburguer.is-active:after {
+    transform: rotate(45deg) translate(-9px, -8px);
+}
+
+.hamburguer.is-active .bar {
+    opacity: 0;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    min-height: 100vh;
+    display: block;
+    z-index: 1;
+    background-color: #131b29;
+    padding-top: 120px;
+    transition: 0.5s;
+}
+
+.mobile-nav a {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 16px;
+    text-align: center;
+    padding: 12px 16px;
+    background-color: #1a2d4e;
+
+    color: white;
+    text-decoration: none;
+}
+
+.mobile-nav.is-active {
+    left: 0;
+}
+
+.mobile-nav a:hover {
+    background-color: #204078;
+}
+
+@media (min-width: 768px) {
+    
+    .mobile-nav {
+        display: none;
+    }
+
+    .hamburguer {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .HeadNav a {
+        display: none;
+    }
+}
+
+/* --------------------------------------------- */
+
+@media (max-width: 768px) {
+    .HeadLogo {
+        width: 70%;
+    }
+
+    .HeadHamburguer {
+        width: 30%;
+    }
+
+    .LandingContainer {
+        display: flex !important;
+        flex-direction: column !important;
+        height: fit-content !important;
+    }
+
+    .circle, .circle2 {
+        display: none !important;
+    }
+
+    .TitleFloatLeft {
+        width: 100% !important;
+        padding: 2rem !important;
+        padding-top: 0 !important;
+        margin-bottom: 4rem !important;
+    }
+
+    .TitleFloatLeft h1 {
+        margin: 0 !important;
+        font-size: 4em !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .ImgContainer {
+        width: 100% !important;
+    }
+
+    .CardContainer {
+        display: flex !important ;
+        flex-direction: column !important;
+        width: 100% !important;
+        height: fit-content !important;
+    }
+
+    .Cards {
+        display: block !important;
+        padding: 3rem 2rem !important;
+    }
+
+    .Card {
+        width: 100% !important;
+        margin-bottom: 4rem !important;
+    }
+
+    .Card:last-of-type {
+        margin-bottom: 2rem !important;
+    }
+    
+    .AboutUsContainer {
+        display: flex !important;
+        flex-direction: column !important;
+        height: fit-content !important;
+    }
+    
+    .Map {
+        width: 100% !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    .Aboutus {
+        width: 100% !important;
+        padding-top: 2rem !important;
+    }
+
+    .foot {
+        height: 12em !important;
+        padding: 3em !important;
+    }
+
+    .foot h2 {
+        font-size: 1.2rem !important;
+        word-spacing: 0.5rem !important;
+    }
+
+}
+
+.LandingContainer {
+    height: 90vh;
+    width: 100%;
+    padding: 0 4em;
+    display: flex;
+    gap: 3em;
+    flex-direction: row;
+}
+
+.ImgContainer {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 35%;
+}
+
+.ImgBig {
+    width: 100%;
+    height: 580px;
+    z-index: 0;
+    object-fit: contain;
+    transition: all 1s ease-in-out;
+    filter: contrast(0.85);
+}
+
+.ImgBig:hover {
+    filter: contrast(1.6)
+}
+
+.TitleFloatLeft {
+    padding: 4em;
+    width: 65%;
+}
+
+.TitleFloatLeft h1 {
+    font-size: 5em;
+}
+
+.TitleFloatLeft h2 {
+    font-size: 2.2em;
+    transition: all 0.5s ease-in-out;
+}
+
+.TitleFloatLeft h2:hover {
+    color: rgb(81, 93, 184);
+}
+
+.circle {
+    border: 2px solid #dfd218;
+    border-radius: 50%;
+    background: rgba(255, 221, 0, 25%);
+    color: black;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    position: absolute;
+    left: 58%;
+    top: 26.5%;
+    transition: all 0.5s ease-in-out;
+}
+
+.circle:hover {
+    background: rgba(255, 221, 0, 35%);
+    cursor: pointer;
+    filter: contrast(1.2);
+}
+
+.circle2 {
+    border: 2px solid #c81919;
+    border-radius: 50%;
+    background: rgba(255, 0, 0, 0.25);
+    color: black;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    position: absolute;
+    left: 40.5%;
+    top: 38.5%;
+    transition: all 0.5s ease-in-out;
+}
+
+.circle2:hover {
+    background: rgba(255, 0, 0, 0.35);
+    filter: contrast(1.2);
+    cursor: pointer;
+}
+
+.CardContainer {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at bottom left, #fbdb2d 35%, transparent 36%), radial-gradient(circle at top right, #fbdb2d 35%, transparent 36%);
+    background-size: 6em 6em;
+    background-color: #ffffff;
+    opacity: 1;
+}
+
+
+.Cards {
+    height: 80%;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.Card {
+    padding: 3em;
+    max-height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    border: 1px solid rgba(255, 255, 255, 0.705);
+    border-radius: 6px;
+    background-color: #1a2332eb;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    text-align: justify;
+    transition: all 0.2s ease-in-out;
+}
+
+.Card:hover {
+    transform: translateY(-10px);
+    background-color: #1a2332d6;
+}
+
+.CardInfo {
+    color: #a4b1cd;
+    height: 100%;
+    overflow: hidden;
+}
+
+.CardInfo h1 {
+    color: white;
+    text-decoration: underline;
+}
+
+.CardInfo h2 {
+    font-weight: normal;
+    font-size: 1.6rem;
+
+    text-overflow: clip;
+    max-height: inherit;
+}
+
+.CardInfo h2 strong {
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.CardInfo h2 strong:hover {
+    color: #f4e87c;
+}
+
+.foot {
+    height: 8em;
+    width: 100%;
+    background-color: #131b29;
+    color: white;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.foot h2 {
+    font-weight: normal;
+    font-size: 1.3rem;
+    word-spacing: 0.5rem;
+}
+
+.foot h2:first-of-type {
+    margin-bottom: 0.6em;
+}
+
+.AboutUsContainer {
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.Map {
+    width: 50%;
+    height: 100%;
+    padding: 4em;
+}
+
+.MapImg {
+    width: 100%;
+    object-fit: contain;
+    transition: all 1.5s ease-in-out;
+    border-radius: 30px;
+}
+
+.MapImg:hover {
+    filter: hue-rotate(-60deg);
+}
+
+.Aboutus {
+    padding: 6em 6em 6em 4em;
+    width: 50%;
+    height: 100%;
+    color: rgb(47, 81, 141);
+    text-align: justify;
+}
+
+.Aboutus h2 {
+    margin-top: 1em;
+    font-weight: normal;
+}

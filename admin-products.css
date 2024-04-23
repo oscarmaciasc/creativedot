@@ -1,0 +1,410 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    height: 100%;
+}
+
+header {
+    width: 100%;
+    height: 5em;
+    z-index: 2;
+    position: relative;
+}
+
+.HeadFlex {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    color: white;
+    background-color: #131b29;
+    position: relative;
+}
+
+
+.HeadLogo {
+    width: 20%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.HeadLogo h1 {
+    margin: 0;
+    font-size: 1.6em;
+}
+
+.HeadNav ul {
+    all: unset;
+}
+
+.HeadNav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+
+    display: inline-block;
+    padding-bottom:2px;
+    background-image: linear-gradient(#ffffff 0 0);
+    background-position: 0 100%; /*OR bottom left*/
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    transition:
+      background-size 0.3s,
+      background-position 0.2s 0.3s; /*change after the size immediately*/
+}
+
+.HeadNav a:hover {
+    background-position: 100% 100%; /*OR bottom right*/
+  background-size: 100% 2px;
+}
+
+.HeadNav {
+    width: 75%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+}
+
+.HeadNav a {
+    margin: 1em;
+}
+
+/* ----------------HAMBURGUER MENU MOBILE----------------- */
+
+.HeadHamburguer {
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.hamburguer {
+    position: relative;
+    display: block;
+    width: 35px;
+    cursor: pointer;
+    
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+
+    transition: all 0.1s ease-in-out;
+    z-index: 1;
+}
+
+.hamburguer:hover {
+    transform: scale(1.1);
+}
+
+.hamburguer .bar,
+.hamburguer:after,
+.hamburguer:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0px;
+    transition: 0.4s;
+}
+
+.hamburguer.is-active:before {
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.hamburguer.is-active:after {
+    transform: rotate(45deg) translate(-9px, -8px);
+}
+
+.hamburguer.is-active .bar {
+    opacity: 0;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    min-height: 100vh;
+    display: block;
+    z-index: 1;
+    background-color: #131b29;
+    padding-top: 120px;
+    transition: 0.5s;
+}
+
+.mobile-nav a {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 16px;
+    text-align: center;
+    padding: 12px 16px;
+    background-color: #1a2d4e;
+
+    color: white;
+    text-decoration: none;
+}
+
+.mobile-nav.is-active {
+    left: 0;
+}
+
+.mobile-nav a:hover {
+    background-color: #204078;
+}
+
+@media (min-width: 768px) {
+    
+    .mobile-nav {
+        display: none;
+    }
+
+    .hamburguer {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .HeadNav a {
+        display: none;
+    }
+}
+
+/* --------------------------------------------- */
+
+.Container {
+    width: 100%;
+    height: fit-content;
+}
+
+.Input {
+    height: 80px;
+}
+
+.CardContainer {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    flex-wrap: wrap;
+    height: fit-content;
+    padding: 4rem;
+    padding-top: 3rem;
+    padding-right: 3rem;
+    padding-left: 1rem;
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+}
+
+.Card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 1rem;
+    height: 460px;
+    width: 24%;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Card:hover {
+    transform: translateY(-15px);
+    /* transition: all 0.5s ease-in-out; */
+}
+
+/* .Card:hover > .CardInfo {
+    filter: opacity(10%);
+    display: none;
+} */
+
+.CardImg {
+    height: 60%;
+}
+
+.CardImg img {
+    border-radius: 1rem 1rem 0rem 0rem;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.CardInfo {
+    height: 35%;
+    border-radius: 0rem 0rem 1rem 1rem;
+    padding: 1em;
+    background-color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.floatInfo:hover {
+    cursor: pointer;
+}
+
+.CardInfo h1 {
+    font-size: 1rem;
+}
+
+.CardInfo p {
+    margin-top: 0.4rem;
+    font-size: 0.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: justify;
+}
+
+.Card button {
+    display: block;
+    margin: 0;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+
+.Add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    height: 100%;
+}
+
+.Add i {
+    color: black;
+}
+
+.Add i:hover {
+    cursor: pointer;
+}
+
+.Add i:hover > .CardImg img {
+    filter: blur(1rem);
+}
+
+.Add button {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foot {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    gap: 3em;
+    width: 100%;
+}
+
+footer {
+    color: white;
+    padding: 2%;
+    background-color: #212529;
+    width: 96%;
+}
+
+footer h1 {
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .HeadLogo {
+        width: 70%;
+    }
+
+    .HeadHamburguer {
+        width: 30%;
+    }
+
+    .LandingContainer {
+        display: flex !important;
+        flex-direction: column !important;
+        height: fit-content !important;
+    }
+
+    .circle, .circle2 {
+        display: none !important;
+    }
+
+    .TitleFloatLeft {
+        width: 100% !important;
+        padding: 2rem !important;
+        padding-top: 0 !important;
+        margin-bottom: 4rem !important;
+    }
+
+    .TitleFloatLeft h1 {
+        margin: 0 !important;
+        font-size: 4em !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .ImgContainer {
+        width: 100% !important;
+    }
+
+    .CardContainer {
+        display: flex !important ;
+        flex-direction: column !important;
+        width: 100% !important;
+        height: fit-content !important;
+        gap: 0 !important;
+        padding: 6rem;
+    }
+
+    .Cards {
+        display: block !important;
+        padding: 3rem 2rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .Card {
+        width: 100% !important;
+        margin-bottom: 4rem !important;
+    }
+
+    .Card:last-of-type {
+        margin-bottom: 2rem !important;
+    }
+
+    .foot {
+        display: flex;
+        flex-direction: column;
+        height: 12em !important;
+        padding: 3em !important;
+    }
+
+    .foot h2 {
+        font-size: 1.2rem !important;
+        word-spacing: 0.5rem !important;
+    }
+
+}

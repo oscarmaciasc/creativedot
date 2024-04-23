@@ -1,0 +1,194 @@
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: rgb(236, 234, 234);
+}
+
+.HeadFlex {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 6em;
+    color: white;
+    background-color: black;
+}
+
+.HeadLogo {
+    width: 20%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.HeadLogo h1 {
+    margin: 0;
+    font-size: 1.6em;
+}
+
+.HeadNav ul {
+    all: unset;
+}
+
+.HeadNav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+
+    display: inline-block;
+    padding-bottom:2px;
+    background-image: linear-gradient(#ffffff 0 0);
+    background-position: 0 100%; /*OR bottom left*/
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    transition:
+      background-size 0.3s,
+      background-position 0s 0.3s; /*change after the size immediately*/
+}
+
+.HeadNav a:hover {
+    background-position: 100% 100%; /*OR bottom right*/
+  background-size: 100% 2px;
+}
+
+.HeadNav {
+    width: 75%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.HeadNav a {
+    margin: 1em;
+}
+
+.HeadHamburguer {
+    width: 15%;
+    height: auto;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.HeadHamburguer i {
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+.HeadHamburguer i:hover {
+    transform: scale(1.1);
+}
+
+.container {
+ padding: 4rem;
+ height: 70vh;
+}
+
+.flex-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.flex-big-img {
+    width: 50%;
+    height: 100%;
+    background-color: blueviolet;
+}
+
+.big-img {
+    width: 100%;
+    height: 100%;
+}
+
+#bigImg {
+    background-image: url(img/00-Art.jpg);
+}
+
+.big-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-image: url("img/03-Art.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.flex-various-img {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+}
+
+.mini-img {
+    margin: 1rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    width: 22%;
+    height: 30%;
+    background-color: cadetblue;
+    object-fit: cover;
+    background-image: url("img/03-Art.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.mini-img:hover {
+    animation: tilt-n-move-shaking 0.3s ease-in-out;  
+    cursor: pointer;
+}
+
+.mini-img:active {
+    border: solid 2px black;
+}
+
+
+@keyframes tilt-n-move-shaking {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(2px, 2px) rotate(3.5deg); }
+  50% { transform: translate(0, 0) rotate(0eg); }
+  75% { transform: translate(-2px, 2px) rotate(-3.5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+.flex-info {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.text-product {
+
+}
+
+.btn-product {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-product button {
+    cursor: pointer;    
+    margin-top: 2rem;
+    background-color: orange;
+    border: none;
+    color: white;
+    padding: 1rem;
+    width: 200px;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="add.css">
+    <title>Add Artist</title>
+</head>
+
+<header class="HeadFlex">
+    <div class="HeadLogo">
+        <h1>creative.dot</h1>
+    </div>
+    <div class="HeadNav">
+        <a href="index-admin.php">HOME</a>
+        <a href="admin-products.php">PRODUCTS</a>
+        <a href="admin-artists.php">ARTISTS</a>
+        <a href="log.php">LOG</a>
+        <a href="Server/process-user.php?logout=true">LOGOUT</a>
+    </div>
+    <div class="HeadHamburguer">
+
+        <div class="hamburguer">
+            <div class="bar"></div>
+        </div>
+    </div>
+</header>
+
+<nav class="mobile-nav">
+    <a href="index-admin.php">HOME</a>
+    <a href="admin-products.php">STORE</a>
+    <a href="admin-artists.php">ARTISTS</a>
+    <a href="log.php">LOG</a>
+    <a href="Server/process-user.php?logout=true">LOGOUT</a>
+</nav>
+
+<body>
+    <div class="Container">
+        <div class="AddContainer">
+            <div class="FormContainer">
+                <h1 class="centerTitle">Add Artist</h1>
+            </div>
+            <form style="width: 50%;" method="post" action="addArtist.php" enctype="multipart/form-data">
+                <div class="form-flex">
+                    <label for="product-name">Nombre del Artista</label>
+                    <input type="text" id="artist-name" name="artist-name" required>
+
+                    <label for="image">Select Image:</label>
+                    <input type="file" name="image" id="image" accept="image/*">
+
+                    <label for="description">Descripcion</label>
+                    <input style="height: 100px;" type="text" id="description" name="description" required>
+                </div>
+                <div>
+                    <button type="submit">ADD</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            const menu_btn = document.querySelector('.hamburguer');
+            const mobile_menu = document.querySelector('.mobile-nav');
+            menu_btn.addEventListener('click', function () {
+                menu_btn.classList.toggle('is-active');
+                mobile_menu.classList.toggle('is-active');
+            })
+        }
+    </script>
+</body>
+<footer class="foot">
+    <h1><strong>Created By: </strong>Oscar Alejandro Macias Castillo.</h1>
+    <h1><strong>From: </strong>4P Software Development - Database and Web Development.</h1>
+</footer>
+
+</html>
